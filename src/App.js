@@ -5,10 +5,10 @@ const App = () => {
   return (// JSX (Extended Javascript)
     <>
       <Nav />
-      <div className="App">
+      <div className="container">
         <Bio />
+        <Gallery />
       </div>
-      <Gallery />
     </>
 
   );
