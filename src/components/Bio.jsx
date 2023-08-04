@@ -23,7 +23,7 @@ const Bio = () => {
         }
 
         setDataFromDb()
-    })
+    }, [])
 
     const updateUserDetails = async (event) => {
         event.preventDefault()
@@ -44,8 +44,8 @@ const Bio = () => {
 
     const editForm = (
         <form className='edit-bio-form' onSubmit={(e) => updateUserDetails(e)}>
-            <input type='text' id='' name='nameOfUser' placeholder='Your name'/>
-            <input type='text' id='' name='aboutUser' placeholder='About you'/>
+            <input type='text' id='' name='nameOfUser' defaultValue={userDetails?.name}  placeholder='Your name'/>
+            <input type='text' id='' name='aboutUser' defaultValue={userDetails?.about}  placeholder='About you'/>
             <br />
             <button type='button' className='cancel-button' onClick={() => setEditFormIsOpen(false)}>Cancel</button>
             <button type='submit'>Save</button>
